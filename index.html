@@ -3,106 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <title>Geek Protocol Litepaper v1.5</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Geek Protocol Litepaper v1.5 — Proof-of-Learning on Kaspa. Flip education on its head. All Hope. No Hype." />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Geek Protocol Litepaper v1.5 — Proof-of-Learning on Kaspa. Flip education on its head." />
+
+  <!-- THEME -->
   <style>
     :root {
       --bg: #0b0a18;
       --panel: #14132b;
+      --panel-soft: #101027;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --accent: #22d3ee;
-      --border: rgba(255,255,255,0.1);
+      --accent-soft: rgba(34,211,238,0.15);
+      --border: rgba(255,255,255,0.12);
+      --glow: 0 0 24px rgba(34,211,238,0.35);
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
+      background: radial-gradient(1200px 600px at 20% -10%, #16204a33, transparent),
+                  radial-gradient(900px 500px at 80% 10%, #22d3ee22, transparent),
+                  var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     a:hover { text-decoration: underline; }
 
     .container {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 48px 20px;
+      padding: 64px 20px;
     }
 
     section {
-      margin-bottom: 72px;
+      margin-bottom: 88px;
     }
 
     h1, h2, h3 {
       line-height: 1.25;
-      margin-top: 0;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.02em;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 16px;
+      font-size: 3.2rem;
+      text-shadow: var(--glow);
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+      font-size: 2.1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
     }
 
     h3 {
       font-size: 1.25rem;
-      margin-bottom: 8px;
+      color: var(--accent);
     }
 
     p {
       max-width: 760px;
-      color: var(--text);
+      margin-bottom: 16px;
     }
 
-    .muted { color: var(--muted); }
+    .muted {
+      color: var(--muted);
+    }
 
     .panel {
-      background: var(--panel);
+      background: linear-gradient(180deg, var(--panel), var(--panel-soft));
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 24px;
+      border-radius: 18px;
+      padding: 28px;
+      margin-top: 28px;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 22px;
     }
 
     li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .tagline {
-      font-size: 1.25rem;
-      color: var(--muted);
-      margin-bottom: 24px;
+    .hero {
+      background: linear-gradient(180deg, rgba(34,211,238,0.08), transparent);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: var(--glow);
     }
 
     .pill {
       display: inline-block;
+      margin: 6px 10px 0 0;
       padding: 6px 14px;
-      border: 1px solid var(--border);
       border-radius: 999px;
-      margin-right: 8px;
-      margin-top: 8px;
+      border: 1px solid var(--border);
+      background: var(--accent-soft);
       font-size: 0.85rem;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 32px 0;
+      padding: 36px 0;
       text-align: center;
       color: var(--muted);
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -112,46 +130,51 @@
 <div class="container">
 
   <!-- HERO -->
-  <section id="top">
+  <section class="hero" id="top">
     <h1>Flip Education on Its Head</h1>
-    <p class="tagline">
-      Geek Protocol is a decentralized <strong>Proof-of-Learning protocol</strong> built on Kaspa.
+    <p class="muted">
+      <strong>Geek Protocol</strong> is a decentralized
+      <strong>Proof-of-Learning protocol</strong> built on Kaspa.
     </p>
     <p>
       Earn by proving what you know — not by paying, grinding, or speculating.
     </p>
+
     <div>
       <span class="pill">Knowledge becomes measurable</span>
       <span class="pill">Learning becomes valuable</span>
       <span class="pill">Rewards become fair</span>
     </div>
-    <p class="muted" style="margin-top:24px;"><strong>All Hope. No Hype.</strong></p>
+
+    <p style="margin-top:28px;"><strong>All Hope. No Hype.</strong></p>
   </section>
 
   <!-- EXECUTIVE SUMMARY -->
-  <section id="executive-summary">
+  <section>
     <h2>Executive Summary</h2>
     <p>
       Geek Protocol is infrastructure for learning in Web3.
     </p>
     <p>
-      While most decentralized systems reward capital and speculation, Geek Protocol rewards
-      <strong>demonstrated knowledge</strong> through skill-based participation.
+      While most decentralized systems reward capital and speculation,
+      Geek Protocol rewards <strong>demonstrated knowledge</strong>.
     </p>
     <p>
-      Instead of credentials, users provide proof.
-      Instead of grinding, users compete.
-      Instead of gatekeepers, rewards are transparent and on-chain.
+      The protocol introduces <strong>Proof-of-Learning</strong> —
+      a system where skill is verified through performance
+      and rewarded transparently on-chain.
     </p>
     <p>
-      Geek Protocol begins as a Quiz-to-Earn experience and evolves into a
-      <strong>public Proof-of-Learning layer</strong> for culture, education, and community.
+      Geek Protocol begins as a Quiz-to-Earn experience
+      and evolves into a public learning layer
+      for culture, education, and community.
     </p>
   </section>
 
   <!-- PROBLEM -->
-  <section id="problem">
+  <section>
     <h2>The Problem</h2>
+
     <div class="panel">
       <h3>Education</h3>
       <ul>
@@ -164,7 +187,7 @@
     <div class="panel">
       <h3>Web3</h3>
       <ul>
-        <li>“Earn” models reward time or money, not skill</li>
+        <li>“Earn” models reward time or capital, not skill</li>
         <li>Automation and farming dominate</li>
         <li>Cultural knowledge has no value layer</li>
       </ul>
@@ -173,8 +196,8 @@
     <p><strong>Knowledge exists — but it isn’t rewarded.</strong></p>
   </section>
 
-  <!-- OPPORTUNITY -->
-  <section id="proof-of-learning">
+  <!-- PROOF OF LEARNING -->
+  <section>
     <h2>Proof-of-Learning</h2>
     <p>
       Geek Protocol introduces a new on-chain primitive:
@@ -192,19 +215,21 @@
   </section>
 
   <!-- WHY KASPA -->
-  <section id="kaspa">
+  <section>
     <h2>Why Kaspa</h2>
     <p>
-      Geek Protocol requires fast confirmations, low latency, and predictable fees.
+      Geek Protocol requires fast confirmations,
+      low latency, and predictable fees
+      to support real-time, competitive learning.
     </p>
     <p>
-      Kaspa enables real-time, user-facing learning experiences without sacrificing decentralization —
-      making it uniquely suited for Proof-of-Learning infrastructure.
+      Kaspa enables user-facing Proof-of-Learning
+      without sacrificing decentralization.
     </p>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how-it-works">
+  <section>
     <h2>How It Works</h2>
     <div class="panel">
       <h3>Learn → Compete → Earn → Progress</h3>
@@ -215,6 +240,7 @@
         <li>Earn <strong>$GEEK</strong> based on performance</li>
         <li>Progress through XP, achievements, and collectibles</li>
       </ol>
+
       <div>
         <span class="pill">No pay-to-win</span>
         <span class="pill">No farming</span>
@@ -224,14 +250,11 @@
   </section>
 
   <!-- TOKEN -->
-  <section id="token">
-    <h2>The $GEEK Token</h2>
+  <section>
+    <h2>Why the $GEEK Token Exists</h2>
     <p>
-      <strong>$GEEK</strong> is the coordination layer of the protocol.
-    </p>
-    <p>
-      It enables objective rewards, permissionless participation, transparent value flow,
-      and community governance.
+      Proof-of-Learning cannot function
+      without a native on-chain unit of value.
     </p>
 
     <div class="panel">
@@ -243,13 +266,19 @@
         <li><strong>Economics:</strong> Recycle & Burn (70% recycle / 30% burn)</li>
       </ul>
     </div>
+
+    <p>
+      Without $GEEK, learning outcomes
+      could not be verified, rewarded,
+      or governed on-chain.
+    </p>
   </section>
 
   <!-- FAIRNESS -->
-  <section id="fairness">
+  <section>
     <h2>Fairness & Integrity</h2>
     <ul>
-      <li>Wallet-gated rewards</li>
+      <li>Wallet-gated participation</li>
       <li>Server-side validation</li>
       <li>Anti-bot controls</li>
       <li>No capital advantages</li>
@@ -258,13 +287,16 @@
   </section>
 
   <!-- PUBLIC GOOD -->
-  <section id="public-good">
+  <section>
     <h2>From Game to Public Good</h2>
     <p>
-      Geek Protocol starts as a game — but it is not just a game.
+      Geek Protocol starts as a game —
+      but it is not just a game.
     </p>
     <p>
-      Proof-of-Learning becomes a signal of skill, a reputation layer,
+      Proof-of-Learning becomes
+      a reputation layer,
+      a cultural archive,
       and open learning infrastructure.
     </p>
     <ul>
@@ -275,18 +307,18 @@
   </section>
 
   <!-- ROADMAP -->
-  <section id="roadmap">
+  <section>
     <h2>Roadmap</h2>
     <ul>
-      <li><strong>Phase 1:</strong> Testnet MVP & core engine</li>
-      <li><strong>Phase 2:</strong> Mainnet rewards & progression</li>
+      <li><strong>Phase 1:</strong> Validate Proof-of-Learning (Testnet)</li>
+      <li><strong>Phase 2:</strong> Mainnet rewards & scale participation</li>
       <li><strong>Phase 3:</strong> Community content & DAO governance</li>
       <li><strong>Phase 4:</strong> Open Proof-of-Learning infrastructure</li>
     </ul>
   </section>
 
   <!-- CLOSE -->
-  <section id="close">
+  <section>
     <h2>Closing</h2>
     <p>
       The internet made knowledge abundant — but not valuable.

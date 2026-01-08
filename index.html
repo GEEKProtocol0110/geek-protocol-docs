@@ -398,6 +398,83 @@
             <strong>Core loop:</strong> Learn → Compete → Earn → Progress
           </div>
         </section>
+<div class="diagram" aria-label="Proof-of-Learning loop diagram">
+  <svg viewBox="0 0 980 360" role="img">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#22d3ee"/>
+        <stop offset="100%" stop-color="#a78bfa"/>
+      </linearGradient>
+
+      <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="6" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+        <path d="M0,0 L12,6 L0,12 Z" fill="rgba(34,211,238,.75)"></path>
+      </marker>
+    </defs>
+
+    <!-- soft ring -->
+    <circle cx="490" cy="180" r="138" fill="none" stroke="rgba(34,211,238,.20)" stroke-width="10" filter="url(#glow)"/>
+    <circle cx="490" cy="180" r="138" fill="none" stroke="rgba(167,139,250,.12)" stroke-width="18"/>
+
+    <!-- nodes -->
+    <!-- Learn -->
+    <g>
+      <rect x="90" y="140" rx="16" ry="16" width="190" height="80" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.12)"/>
+      <text x="185" y="173" text-anchor="middle" fill="#e5e7eb" font-size="20" font-weight="700">Learn</text>
+      <text x="185" y="198" text-anchor="middle" fill="#9ca3af" font-size="13">Acquire knowledge</text>
+    </g>
+
+    <!-- Compete -->
+    <g>
+      <rect x="300" y="40" rx="16" ry="16" width="190" height="80" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.12)"/>
+      <text x="395" y="73" text-anchor="middle" fill="#e5e7eb" font-size="20" font-weight="700">Compete</text>
+      <text x="395" y="98" text-anchor="middle" fill="#9ca3af" font-size="13">Timed performance</text>
+    </g>
+
+    <!-- Earn -->
+    <g>
+      <rect x="510" y="40" rx="16" ry="16" width="190" height="80" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.12)"/>
+      <text x="605" y="73" text-anchor="middle" fill="#e5e7eb" font-size="20" font-weight="700">Earn</text>
+      <text x="605" y="98" text-anchor="middle" fill="#9ca3af" font-size="13">$GEEK rewards</text>
+    </g>
+
+    <!-- Progress -->
+    <g>
+      <rect x="720" y="140" rx="16" ry="16" width="190" height="80" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.12)"/>
+      <text x="815" y="173" text-anchor="middle" fill="#e5e7eb" font-size="20" font-weight="700">Progress</text>
+      <text x="815" y="198" text-anchor="middle" fill="#9ca3af" font-size="13">XP • levels • mastery</text>
+    </g>
+
+    <!-- validation spine in center -->
+    <g>
+      <rect x="390" y="150" rx="18" ry="18" width="200" height="60" fill="rgba(34,211,238,.10)" stroke="rgba(34,211,238,.30)"/>
+      <text x="490" y="178" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="700">Protocol Validation</text>
+      <text x="490" y="198" text-anchor="middle" fill="#9ca3af" font-size="12">Verify results → authorize rewards</text>
+    </g>
+
+    <!-- arrows around -->
+    <path d="M280 180 C320 120, 330 110, 350 90" fill="none" stroke="rgba(34,211,238,.65)" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M490 120 C520 105, 555 105, 585 120" fill="none" stroke="rgba(34,211,238,.65)" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M700 90 C740 110, 750 120, 720 180" fill="none" stroke="rgba(34,211,238,.65)" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M720 220 C650 285, 330 285, 280 220" fill="none" stroke="rgba(34,211,238,.45)" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <!-- label -->
+    <text x="490" y="332" text-anchor="middle" fill="url(#g1)" font-size="14" font-weight="800">
+      Proof-of-Learning loop: demonstrated skill → verified outcomes → fair rewards
+    </text>
+  </svg>
+
+  <div class="small-note">
+    The “Protocol Validation” step is the anti-farm spine: results are verified before any rewards are issued.
+  </div>
+</div>
 
         <!-- 4. Why Kaspa -->
         

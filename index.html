@@ -5,336 +5,511 @@
   <title>Geek Protocol Litepaper v1.5</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Geek Protocol Litepaper v1.5 — Proof-of-Learning on Kaspa. Flip education on its head." />
+  <meta name="description" content="Geek Protocol Litepaper v1.5 — Proof-of-Learning on Kaspa. Flip education on its head. All Hope. No Hype." />
 
-  <!-- THEME -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Geek Protocol Litepaper v1.5" />
+  <meta property="og:description" content="Proof-of-Learning on Kaspa. Earn by proving what you know." />
+  <meta property="og:type" content="website" />
+
   <style>
-    :root {
-      --bg: #0b0a18;
-      --panel: #14132b;
-      --panel-soft: #101027;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #22d3ee;
-      --accent-soft: rgba(34,211,238,0.15);
-      --border: rgba(255,255,255,0.12);
-      --glow: 0 0 24px rgba(34,211,238,0.35);
+    :root{
+      --bg:#070717;
+      --bg2:#0b0a18;
+      --panel:#101027;
+      --panel2:#14132b;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#22d3ee;
+      --accent2:#a78bfa;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 0 28px rgba(34,211,238,.22);
+      --shadow2: 0 0 18px rgba(167,139,250,.18);
+      --radius:18px;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: radial-gradient(1200px 600px at 20% -10%, #16204a33, transparent),
-                  radial-gradient(900px 500px at 80% 10%, #22d3ee22, transparent),
-                  var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.7;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1100px 520px at 18% -10%, rgba(34,211,238,.18), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(167,139,250,.14), transparent 55%),
+        radial-gradient(900px 520px at 50% 120%, rgba(34,211,238,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.75;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:1040px; margin:0 auto; padding:56px 18px 72px}
+
+    /* top bar */
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      background: rgba(7,7,23,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width:1040px; margin:0 auto;
+      padding:12px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .version{
+      color:var(--muted);
+      font-weight:600;
+      font-size:.9rem;
+      margin-left:8px;
+    }
+    .toplinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:.9rem;
+      text-decoration:none;
+    }
+    .chip:hover{background: rgba(255,255,255,.06); text-decoration:none}
+
+    /* layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 280px 1fr;
+      gap:22px;
+      margin-top:18px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
     }
 
-    a:hover { text-decoration: underline; }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 64px 20px;
+    /* toc */
+    .toc{
+      position:sticky;
+      top:70px;
+      height: fit-content;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow2);
     }
-
-    section {
-      margin-bottom: 88px;
+    @media (max-width: 980px){
+      .toc{position:relative; top:auto}
     }
-
-    h1, h2, h3 {
-      line-height: 1.25;
-      margin: 0 0 16px 0;
-      letter-spacing: -0.02em;
+    .toc h4{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:.75rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
     }
-
-    h1 {
-      font-size: 3.2rem;
-      text-shadow: var(--glow);
+    .toc a{
+      display:block;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--text);
+      font-size:.95rem;
     }
-
-    h2 {
-      font-size: 2.1rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 14px;
+    .toc a:hover{
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.08);
+      text-decoration:none;
     }
-
-    h3 {
-      font-size: 1.25rem;
-      color: var(--accent);
+    .toc .mini{
+      margin-top:12px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.25);
+      color:var(--muted);
+      font-size:.9rem;
     }
+    .toc .mini strong{color:var(--text)}
 
-    p {
-      max-width: 760px;
-      margin-bottom: 16px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .panel {
-      background: linear-gradient(180deg, var(--panel), var(--panel-soft));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      margin-top: 28px;
-    }
-
-    ul {
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .hero {
-      background: linear-gradient(180deg, rgba(34,211,238,0.08), transparent);
-      border: 1px solid var(--border);
+    /* cards */
+    .hero{
+      border:1px solid var(--border);
       border-radius: 24px;
-      padding: 48px;
-      box-shadow: var(--glow);
+      padding:34px;
+      background: linear-gradient(180deg, rgba(34,211,238,.10), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+    }
+    .kicker{
+      color:var(--muted);
+      margin:8px 0 0;
+      font-weight:600;
+    }
+    h1{
+      margin:0;
+      font-size:3rem;
+      letter-spacing:-.03em;
+      line-height:1.1;
+      text-shadow: 0 0 26px rgba(34,211,238,.18);
+    }
+    @media (max-width: 560px){
+      h1{font-size:2.25rem}
     }
 
-    .pill {
-      display: inline-block;
-      margin: 6px 10px 0 0;
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--accent-soft);
-      font-size: 0.85rem;
+    .pills{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px}
+    .pill{
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(34,211,238,.10);
+      font-size:.9rem;
+      color:var(--text);
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 36px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
+    .section{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
     }
+    .section h2{
+      margin:0 0 10px;
+      font-size:1.6rem;
+      letter-spacing:-.02em;
+    }
+    .section p{margin:10px 0}
+    .muted{color:var(--muted)}
+
+    .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    @media (max-width: 700px){
+      .two{grid-template-columns:1fr}
+    }
+    .subcard{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding:16px;
+      background: rgba(0,0,0,.22);
+    }
+    .subcard h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+      color: var(--accent);
+    }
+    ul{margin:10px 0 0; padding-left:20px}
+    li{margin:7px 0}
+
+    .callout{
+      margin-top:14px;
+      border:1px solid rgba(34,211,238,.22);
+      background: rgba(34,211,238,.08);
+      border-radius: 16px;
+      padding:14px 16px;
+    }
+
+    .links{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:12px;
+    }
+
+    footer{
+      margin-top:48px;
+      border-top:1px solid var(--border);
+      padding:26px 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+      text-align:center;
+    }
+
+    /* anchor offset for sticky bar */
+    .anchor{position:relative; top:-82px; visibility:hidden}
   </style>
 </head>
 
 <body>
-
-<div class="container">
-
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <h1>Flip Education on Its Head</h1>
-    <p class="muted">
-      <strong>Geek Protocol</strong> is a decentralized
-      <strong>Proof-of-Learning protocol</strong> built on Kaspa.
-    </p>
-    <p>
-      Earn by proving what you know — not by paying, grinding, or speculating.
-    </p>
-
-    <div>
-      <span class="pill">Knowledge becomes measurable</span>
-      <span class="pill">Learning becomes valuable</span>
-      <span class="pill">Rewards become fair</span>
-    </div>
-
-    <p style="margin-top:28px;"><strong>All Hope. No Hype.</strong></p>
-  </section>
-
-  <!-- EXECUTIVE SUMMARY -->
-  <section>
-    <h2>Executive Summary</h2>
-    <p>
-      Geek Protocol is infrastructure for learning in Web3.
-    </p>
-    <p>
-      While most decentralized systems reward capital and speculation,
-      Geek Protocol rewards <strong>demonstrated knowledge</strong>.
-    </p>
-    <p>
-      The protocol introduces <strong>Proof-of-Learning</strong> —
-      a system where skill is verified through performance
-      and rewarded transparently on-chain.
-    </p>
-    <p>
-      Geek Protocol begins as a Quiz-to-Earn experience
-      and evolves into a public learning layer
-      for culture, education, and community.
-    </p>
-  </section>
-
-  <!-- PROBLEM -->
-  <section>
-    <h2>The Problem</h2>
-
-    <div class="panel">
-      <h3>Education</h3>
-      <ul>
-        <li>Credentials are slow, expensive, and centralized</li>
-        <li>Learning outcomes are opaque</li>
-        <li>Students are treated as passive</li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>Web3</h3>
-      <ul>
-        <li>“Earn” models reward time or capital, not skill</li>
-        <li>Automation and farming dominate</li>
-        <li>Cultural knowledge has no value layer</li>
-      </ul>
-    </div>
-
-    <p><strong>Knowledge exists — but it isn’t rewarded.</strong></p>
-  </section>
-
-  <!-- PROOF OF LEARNING -->
-  <section>
-    <h2>Proof-of-Learning</h2>
-    <p>
-      Geek Protocol introduces a new on-chain primitive:
-      <strong>Proof-of-Learning</strong>.
-    </p>
-    <ul>
-      <li>Knowledge is demonstrated, not claimed</li>
-      <li>Skill determines rewards</li>
-      <li>Participation is open and wallet-gated</li>
-      <li>Outcomes are verifiable and repeatable</li>
-    </ul>
-    <p>
-      Learning becomes an active, measurable economic action.
-    </p>
-  </section>
-
-  <!-- WHY KASPA -->
-  <section>
-    <h2>Why Kaspa</h2>
-    <p>
-      Geek Protocol requires fast confirmations,
-      low latency, and predictable fees
-      to support real-time, competitive learning.
-    </p>
-    <p>
-      Kaspa enables user-facing Proof-of-Learning
-      without sacrificing decentralization.
-    </p>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section>
-    <h2>How It Works</h2>
-    <div class="panel">
-      <h3>Learn → Compete → Earn → Progress</h3>
-      <ol>
-        <li>Connect a Kaspa wallet</li>
-        <li>Enter a skill-based quiz session</li>
-        <li>Answer under time pressure</li>
-        <li>Earn <strong>$GEEK</strong> based on performance</li>
-        <li>Progress through XP, achievements, and collectibles</li>
-      </ol>
-
-      <div>
-        <span class="pill">No pay-to-win</span>
-        <span class="pill">No farming</span>
-        <span class="pill">No randomness</span>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="dot"></div>
+        <div>Geek Protocol <span class="version">Litepaper v1.5</span></div>
+      </div>
+      <div class="toplinks">
+        <a class="chip" href="#token">Jump to $GEEK</a>
+        <a class="chip" href="https://x.com/geekonkas" target="_blank" rel="noreferrer">X</a>
+        <a class="chip" href="https://t.me/GEEKonKAScommunity" target="_blank" rel="noreferrer">Telegram</a>
+        <a class="chip" href="https://kas.fyi/token/krc20/GEEK" target="_blank" rel="noreferrer">Token Info</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- TOKEN -->
-  <section>
-    <h2>Why the $GEEK Token Exists</h2>
-    <p>
-      Proof-of-Learning cannot function
-      without a native on-chain unit of value.
-    </p>
+  <div class="wrap">
+    <div class="grid">
+      <!-- TOC -->
+      <aside class="toc">
+        <h4>Contents</h4>
+        <a href="#vision">1. Vision</a>
+        <a href="#problem">2. The Problem</a>
+        <a href="#pol">3. Proof-of-Learning</a>
+        <a href="#kaspa">4. Why Kaspa</a>
+        <a href="#ecosystem">5. The Ecosystem</a>
+        <a href="#token">6. The $GEEK Token</a>
+        <a href="#governance">7. Governance</a>
+        <a href="#roadmap">8. Roadmap</a>
+        <a href="#join">9. Join</a>
 
-    <div class="panel">
-      <ul>
-        <li><strong>Standard:</strong> KRC-20</li>
-        <li><strong>Network:</strong> Kaspa</li>
-        <li><strong>Supply:</strong> 144B fixed</li>
-        <li><strong>Emissions:</strong> Performance-based</li>
-        <li><strong>Economics:</strong> Recycle & Burn (70% recycle / 30% burn)</li>
-      </ul>
+        <div class="mini">
+          <strong>Ethos:</strong> All Hope. No Hype.<br/>
+          <span class="muted">A learning protocol, not a hype loop.</span>
+        </div>
+      </aside>
+
+      <!-- CONTENT -->
+      <main>
+        <!-- HERO -->
+        <section class="hero">
+          <h1>Flip Education on Its Head</h1>
+          <p class="kicker">
+            Geek Protocol is a decentralized <strong>Proof-of-Learning protocol</strong> built on Kaspa.
+          </p>
+          <p>
+            Earn by proving what you know — not by paying, grinding, or speculating.
+          </p>
+
+          <div class="pills">
+            <span class="pill">Knowledge becomes measurable</span>
+            <span class="pill">Learning becomes valuable</span>
+            <span class="pill">Rewards become fair</span>
+          </div>
+
+          <div class="callout">
+            <strong>One sentence:</strong> Geek Protocol turns demonstrated knowledge into verifiable on-chain value.
+          </div>
+        </section>
+
+        <!-- 1. Vision -->
+        <span class="anchor" id="vision"></span>
+        <section class="section">
+          <h2>1.0 The Vision</h2>
+          <p>
+            The internet made knowledge abundant — but not valuable.
+            Web3 introduced ownership — but not merit.
+          </p>
+          <p>
+            Geek Protocol connects the two by introducing <strong>Proof-of-Learning</strong>:
+            a system where skill is demonstrated through performance and rewarded transparently.
+          </p>
+          <p class="muted">
+            This is not “gamified education.” It’s incentive-correct education: learn, prove it, earn.
+          </p>
+        </section>
+
+        <!-- 2. Problem -->
+        <span class="anchor" id="problem"></span>
+        <section class="section">
+          <h2>2.0 The Problem</h2>
+          <div class="two">
+            <div class="subcard">
+              <h3>Education Today</h3>
+              <ul>
+                <li>Centralized credentials and gatekeepers</li>
+                <li>Time and tuition rewarded more than mastery</li>
+                <li>Outcomes are slow, opaque, and often disconnected from skill</li>
+              </ul>
+            </div>
+            <div class="subcard">
+              <h3>Web3 “Earn” Today</h3>
+              <ul>
+                <li>Capital and farming rewarded more than ability</li>
+                <li>Bots and exploit loops degrade trust</li>
+                <li>Culture and knowledge lack a value layer</li>
+              </ul>
+            </div>
+          </div>
+          <p>
+            <strong>We fix the incentives.</strong> Skill becomes the source of rewards.
+          </p>
+        </section>
+
+        <!-- 3. Proof-of-Learning -->
+        <span class="anchor" id="pol"></span>
+        <section class="section">
+          <h2>3.0 Proof-of-Learning</h2>
+          <p>
+            Proof-of-Learning is the protocol mechanism that makes learning measurable and repeatable.
+          </p>
+          <ul>
+            <li><strong>Demonstration:</strong> knowledge is proven through performance, not claims</li>
+            <li><strong>Verification:</strong> results are validated server-side before rewards</li>
+            <li><strong>Reward:</strong> value flows to participants based on skill outcomes</li>
+            <li><strong>Progression:</strong> long-term mastery is reflected through levels and achievements</li>
+          </ul>
+          <div class="callout">
+            <strong>Core loop:</strong> Learn → Compete → Earn → Progress
+          </div>
+        </section>
+
+        <!-- 4. Why Kaspa -->
+        <span class="anchor" id="kaspa"></span>
+        <section class="section">
+          <h2>4.0 Why Kaspa</h2>
+          <p>
+            Geek Protocol needs an L1 that can support real-time, user-facing participation.
+          </p>
+          <ul>
+            <li><strong>Low latency:</strong> competitive fairness depends on fast interactions</li>
+            <li><strong>Predictable fees:</strong> micro-rewards must remain accessible</li>
+            <li><strong>Scalability:</strong> learning should be open to everyone, not limited by congestion</li>
+          </ul>
+          <p class="muted">
+            Kaspa enables Proof-of-Learning to feel like a modern game while remaining decentralized.
+          </p>
+        </section>
+
+        <!-- 5. Ecosystem -->
+        <span class="anchor" id="ecosystem"></span>
+        <section class="section">
+          <h2>5.0 The Ecosystem</h2>
+          <p>
+            Geek Protocol begins with competitive trivia and expands into a broader learning + culture layer.
+            Each component exists to strengthen the Proof-of-Learning engine.
+          </p>
+
+          <div class="two">
+            <div class="subcard">
+              <h3>The Geek Gauntlet</h3>
+              <p class="muted">Skill verification through timed quiz sessions.</p>
+              <ul>
+                <li>Accuracy + speed scoring</li>
+                <li>Tiered difficulty as users progress</li>
+                <li>Deterministic rewards (no RNG)</li>
+              </ul>
+            </div>
+            <div class="subcard">
+              <h3>Challenges & Mastery</h3>
+              <p class="muted">Retention through progression, not grind.</p>
+              <ul>
+                <li>Daily/weekly challenges</li>
+                <li>XP, levels, achievements</li>
+                <li>Collection goals tied to participation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top:14px;">
+            <h3 style="margin:0 0 8px;">Community Content Engine</h3>
+            <p style="margin:0;" class="muted">
+              Long-term, the protocol expands through community-submitted questions with peer review and incentive alignment.
+              This turns the question bank into a living public resource.
+            </p>
+          </div>
+        </section>
+
+        <!-- 6. Token -->
+        <span class="anchor" id="token"></span>
+        <section class="section">
+          <h2>6.0 The $GEEK Token</h2>
+          <p>
+            <strong>$GEEK</strong> is the coordination layer that makes Proof-of-Learning viable on-chain.
+            It exists to reward skill, circulate value in the ecosystem, and govern the protocol over time.
+          </p>
+
+          <div class="two">
+            <div class="subcard">
+              <h3>Primary Uses</h3>
+              <ul>
+                <li>Skill-based rewards</li>
+                <li>In-protocol utilities and upgrades</li>
+                <li>Marketplace activity</li>
+                <li>Governance participation</li>
+              </ul>
+            </div>
+            <div class="subcard">
+              <h3>Economic Discipline</h3>
+              <ul>
+                <li>Performance-based reward logic</li>
+                <li>Session-capped emissions</li>
+                <li><strong>70/30 Recycle & Burn</strong> on platform fees</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Key point:</strong> Without $GEEK, learning outcomes could not be rewarded, coordinated, or governed on-chain.
+          </div>
+        </section>
+
+        <!-- 7. Governance -->
+        <span class="anchor" id="governance"></span>
+        <section class="section">
+          <h2>7.0 Core Contributors & Governance</h2>
+          <p>
+            Geek Protocol is stewarded by its community and core contributors, with a clear path toward DAO governance.
+          </p>
+          <ul>
+            <li><strong>Core contributors:</strong> build and maintain the protocol’s public infrastructure</li>
+            <li><strong>Community stewardship:</strong> culture, content, and direction emerge from participants</li>
+            <li><strong>The DAO:</strong> protocol parameters and treasury decisions transition to $GEEK holders</li>
+          </ul>
+          <p class="muted">
+            The goal is progressive decentralization: ship a fair system first, then hand control to the community.
+          </p>
+        </section>
+
+        <!-- 8. Roadmap -->
+        <span class="anchor" id="roadmap"></span>
+        <section class="section">
+          <h2>8.0 Roadmap</h2>
+          <ul>
+            <li><strong>Phase 1:</strong> validate Proof-of-Learning via Testnet MVP</li>
+            <li><strong>Phase 2:</strong> Mainnet rewards + scale participation</li>
+            <li><strong>Phase 3:</strong> community content + DAO governance activation</li>
+            <li><strong>Phase 4:</strong> open Proof-of-Learning infrastructure and integrations</li>
+          </ul>
+        </section>
+
+        <!-- 9. Join -->
+        <span class="anchor" id="join"></span>
+        <section class="section">
+          <h2>9.0 Join the Mission</h2>
+          <p>
+            This is an invitation to join a community — not just use a product.
+            If you believe learning deserves a value layer, you belong here.
+          </p>
+
+          <div class="links">
+            <a class="chip" href="https://x.com/geekonkas" target="_blank" rel="noreferrer">X (Twitter)</a>
+            <a class="chip" href="https://t.me/GEEKonKAScommunity" target="_blank" rel="noreferrer">Telegram</a>
+            <a class="chip" href="https://kas.fyi/token/krc20/GEEK" target="_blank" rel="noreferrer">Token Info (kas.fyi)</a>
+            <a class="chip" href="#top">Back to top</a>
+          </div>
+
+          <div class="callout" style="margin-top:16px;">
+            <strong>All Hope. No Hype.</strong>
+          </div>
+        </section>
+
+        <footer>
+          © 2026 Geek Protocol. Proof-of-Learning on Kaspa.
+        </footer>
+      </main>
     </div>
-
-    <p>
-      Without $GEEK, learning outcomes
-      could not be verified, rewarded,
-      or governed on-chain.
-    </p>
-  </section>
-
-  <!-- FAIRNESS -->
-  <section>
-    <h2>Fairness & Integrity</h2>
-    <ul>
-      <li>Wallet-gated participation</li>
-      <li>Server-side validation</li>
-      <li>Anti-bot controls</li>
-      <li>No capital advantages</li>
-    </ul>
-    <p><strong>Skill decides outcomes — not leverage.</strong></p>
-  </section>
-
-  <!-- PUBLIC GOOD -->
-  <section>
-    <h2>From Game to Public Good</h2>
-    <p>
-      Geek Protocol starts as a game —
-      but it is not just a game.
-    </p>
-    <p>
-      Proof-of-Learning becomes
-      a reputation layer,
-      a cultural archive,
-      and open learning infrastructure.
-    </p>
-    <ul>
-      <li>Education without gatekeepers</li>
-      <li>Recognition without institutions</li>
-      <li>Learning without debt</li>
-    </ul>
-  </section>
-
-  <!-- ROADMAP -->
-  <section>
-    <h2>Roadmap</h2>
-    <ul>
-      <li><strong>Phase 1:</strong> Validate Proof-of-Learning (Testnet)</li>
-      <li><strong>Phase 2:</strong> Mainnet rewards & scale participation</li>
-      <li><strong>Phase 3:</strong> Community content & DAO governance</li>
-      <li><strong>Phase 4:</strong> Open Proof-of-Learning infrastructure</li>
-    </ul>
-  </section>
-
-  <!-- CLOSE -->
-  <section>
-    <h2>Closing</h2>
-    <p>
-      The internet made knowledge abundant — but not valuable.
-      Web3 introduced ownership — but not merit.
-    </p>
-    <p>
-      Geek Protocol connects the two.
-    </p>
-    <p><strong>All Hope. No Hype.</strong></p>
-  </section>
-
-</div>
-
-<footer>
-  Geek Protocol — Proof-of-Learning on Kaspa
-</footer>
-
+  </div>
 </body>
 </html>

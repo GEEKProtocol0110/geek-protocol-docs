@@ -53,6 +53,5 @@ The project is currently in the foundational stage. The strategic blueprint is c
 Geek Protocol is being built with a "community-first" ethos. The best way to contribute at this early stage is to join the conversation.
 
 * **For Community Members:** Join our [Telegram](https://t.me/GEEKonKAScommunity) to share your ideas and help shape the future of the protocol.
-* **For Developers:** We are currently hiring a freelance developer to build our Testnet MVP. If you have experience with our tech stack and a passion for Web3 gaming, we'd love to hear from you. See our pinned tweet on [X.com](https://x.com/geekonkas) for details.
 
 ---

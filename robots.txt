@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://geek-litepaper-nu.vercel.app/sitemap.xml
+
+# Disallow access to specific directories (if any exist in future)
+# Disallow: /private/
+# Disallow: /temp/
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1

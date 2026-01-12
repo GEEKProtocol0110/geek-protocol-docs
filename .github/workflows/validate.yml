@@ -1,0 +1,26 @@
+name: Validate HTML & Links
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          
+      - name: Check broken links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress './**/*.html' './**/*.md'
+          fail: true

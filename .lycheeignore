@@ -1,0 +1,6 @@
+# Medium blocks automated link checkers with 403 Forbidden
+https://medium.com/*
+
+# Google Fonts base URLs return 404 by design (only specific font URLs work)
+https://fonts.googleapis.com/
+https://fonts.gstatic.com/

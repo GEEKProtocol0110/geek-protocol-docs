@@ -4,3 +4,6 @@ https://medium.com/*
 # Google Fonts base URLs return 404 by design (only specific font URLs work)
 https://fonts.googleapis.com/
 https://fonts.gstatic.com/
+
+# X refuses unauthenticated CI requests with 403. Keep the reviewed profile link.
+https://x.com/geekonkas

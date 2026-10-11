@@ -9,16 +9,12 @@ Reviewed October 11, 2026. [GEEK HQ](https://www.geekprotocol.xyz/) is the curre
 | [geek-protocol-alpha](https://github.com/GEEKProtocol0110/geek-protocol-alpha) | Earlier engineering implementation; legacy reference |
 | [geek-mini](https://github.com/GEEKProtocol0110/geek-mini) | Active shareable practice game; 76 questions |
 | [geek-jr](https://github.com/GEEKProtocol0110/geek-jr) | Active family learning site; local profiles and backups |
-| [c.c.e.-community-content-engine](https://github.com/GEEKProtocol0110/c.c.e.-community-content-engine) | Separate project |
-| [geek-dao](https://github.com/GEEKProtocol0110/geek-dao) | Separate project |
 | [geek-jr-indexcards](https://github.com/GEEKProtocol0110/geek-jr-indexcards) | Earlier card prototype; content integrated into Geek Jr |
 | [geek-wallet](https://github.com/GEEKProtocol0110/geek-wallet) | Public Alpha public-address portfolio companion |
 | [level-up-life](https://github.com/GEEKProtocol0110/level-up-life) | Separate family progression prototype |
 | [kaspa-speed-benchmark-dashboard](https://github.com/GEEKProtocol0110/kaspa-speed-benchmark-dashboard) | Planned benchmark; collector not implemented |
 | [a.c.e.-AGI](https://github.com/GEEKProtocol0110/a.c.e.-AGI) | Research placeholder; no AGI service released |
 | [kaspa-live-widget](https://github.com/GEEKProtocol0110/kaspa-live-widget) | Signed Android release; device/Play owner checks remain |
-| [GEEK-PROTOCOL-ZER0](https://github.com/GEEKProtocol0110/GEEK-PROTOCOL-ZER0) | Separate project |
-| [git-city-commit-floor-stack](https://github.com/GEEKProtocol0110/git-city-commit-floor-stack) | Separate project |
 | [geek-protocol-site](https://github.com/GEEKProtocol0110/geek-protocol-site) | Earlier website; current work belongs in HQ |
 | [geek-protocol-hq](https://github.com/GEEKProtocol0110/geek-protocol-hq) | Active Public Alpha; current product authority |
 

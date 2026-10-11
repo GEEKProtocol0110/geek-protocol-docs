@@ -1,75 +1,20 @@
-# Geek Protocol
+# Geek Protocol — planning and reference documents
 
-Geek Protocol is a documentation-first repository for a Proof-of-Learning ecosystem being built on Kaspa.
+**Status: historical planning and brand reference.** [GEEK HQ](https://www.geekprotocol.xyz/) is the active Public Alpha; [geek-protocol-hq](https://github.com/GEEKProtocol0110/geek-protocol-hq) is the current product source. Earlier milestone numbers, hiring plans, schedules and proposed economics in these documents describe their original planning stage, not today's shipped features.
 
-The project vision is to reward demonstrated knowledge through gameplay, transparent incentives, and community-owned digital assets.
+Use the [current release status](https://github.com/GEEKProtocol0110/geek-protocol-hq/blob/main/docs/PROJECT-STATUS.md) and [live litepaper](https://www.geekprotocol.xyz/litepaper/) for released versus planned behavior. HQ provides guided learning, games, characters, community content and a separate user-approved Kasware fair-mint flow. Alpha credits are not on-chain GEEK; settlement, reward payouts, purchases and collection minting remain disabled. Marketplace expansion is paused.
 
-## At A Glance
+## Reference library
 
-- Status: Pre-development
-- Current milestone: `1/12` (secure freelance developer for testnet MVP)
-- Chain standard: Kaspa `KRC-20`
-- Public site: [geek-litepaper-nu.vercel.app](https://geek-litepaper-nu.vercel.app/)
-- License: MIT
+- [Earlier quick start](QUICKSTART.md)
+- [Themed litepaper v1.3](docs/Litepaper_Themed_v1.3.html)
+- [Master document v1.3](docs/Master_Document_v1.3.html)
+- [Earlier job descriptions](docs/Job_Description_Themed.html)
+- [Contribution guide](CONTRIBUTING.md) · [Security policy](SECURITY.md) · [Style guide](STYLE_GUIDE.md)
+- [Ecosystem repository map](ECOSYSTEM.md)
 
-## Project Scope
+The existing landing page and formal documents are preserved as references. Brand assets and wireframes remain useful design inputs; a proposal in this repository is not a release commitment.
 
-Geek Protocol combines a quiz-based earning model with long-term ecosystem design.
-
-- Quiz-to-Earn gameplay (`Geek Gauntlet`)
-- Progression mechanics (XP, levels, achievements)
-- Avatar customization and collectible cosmetics
-- Peer-to-peer item marketplace
-- Community-authored content roadmap
-
-## Documentation
-
-- [Quick Start](QUICKSTART.md)
-- [Litepaper (Themed HTML)](docs/Litepaper_Themed_v1.3.html)
-- [Master Document](docs/Master_Document_v1.3.html)
-- [Job Descriptions](docs/Job_Description_Themed.html)
-- [Contributing Guide](CONTRIBUTING.md)
-- [Security Policy](SECURITY.md)
-- [Style Guide](STYLE_GUIDE.md)
-
-## Development Status
-
-| Workstream | Status | Progress |
-|---|---|---|
-| Strategic planning | Completed | 100% |
-| Team assembly | In progress | 25% |
-| Testnet MVP development | Planned | 0% |
-| Community growth | Active | Ongoing |
-
-## Repository Structure
-
-- `index.html`: Public-facing litepaper landing page
-- `docs/`: Formal project documentation and themed HTML deliverables
-- `brand-assets/`: Logos and brand materials
-- `Wireframes/`: Product wireframe artifacts
-- Root markdown files: Governance, contribution, security, and project process docs
-
-## How To Contribute
-
-Contributions are welcome from developers, designers, writers, and community members.
-
-1. Review [CONTRIBUTING.md](CONTRIBUTING.md)
-2. Open an issue for bug reports or proposals
-3. Create a feature branch and submit a pull request
-
-## Official Channels
-
-- Website: [geek-litepaper-nu.vercel.app](https://geek-litepaper-nu.vercel.app/)
-- Medium: [@geek.coin.protocol](https://medium.com/@geek.coin.protocol)
-- X: [@geekonkas](https://x.com/geekonkas)
-- Telegram: [GEEKonKAScommunity](https://t.me/GEEKonKAScommunity)
-- Token profile: [Kaspa Lens ($GEEK)](https://kaspa-lens.com/krc20-tokens/details/?ticker=GEEK)
-
-## Founder Context
-
-Read the project origin narrative:
-[It Started with Index Cards, It Ends with a Universe](https://medium.com/@geek.coin.protocol/it-started-with-index-cards-it-ends-with-a-universe-why-im-building-the-geek-protocol-6e47d6080f47)
-
-## License
+[Website](https://www.geekprotocol.xyz/) · [X / @geekonkas](https://x.com/geekonkas) · [Telegram](https://t.me/GEEKonKAScommunity)
 
 Licensed under the [MIT License](LICENSE).

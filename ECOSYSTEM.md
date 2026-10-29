@@ -6,7 +6,7 @@ Reviewed October 11, 2026. [GEEK HQ](https://www.geekprotocol.xyz/) is the curre
 | --- | --- |
 | [geek-protocol-docs](https://github.com/GEEKProtocol0110/geek-protocol-docs) | Historical planning and brand references |
 | [GEEKProtocol0110](https://github.com/GEEKProtocol0110/GEEKProtocol0110) | Public profile and project directory |
-| [geek-protocol-alpha](https://github.com/GEEKProtocol0110/geek-protocol-alpha) | Earlier engineering implementation; legacy reference |
+| [geek-protocol-alpha](https://github.com/GEEKProtocol0110/geek-protocol-alpha) | Earlier engineering implementation; archived legacy reference |
 | [geek-mini](https://github.com/GEEKProtocol0110/geek-mini) | Active shareable practice game; 76 questions |
 | [geek-jr](https://github.com/GEEKProtocol0110/geek-jr) | Active family learning site; local profiles and backups |
 | [geek-jr-indexcards](https://github.com/GEEKProtocol0110/geek-jr-indexcards) | Earlier card prototype; content integrated into Geek Jr |

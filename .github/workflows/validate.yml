@@ -20,7 +20,7 @@ jobs:
           root: .
           
       - name: Check broken links
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2.0.2
         with:
           args: --verbose --no-progress --exclude-file .lycheeignore './**/*.html' './**/*.md'
           fail: true
